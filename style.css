@@ -1,0 +1,487 @@
+/* =========================================================================
+   Regulatório BCB Fundamentos — Print Stylesheet
+   Estilo: livro técnico moderno, alta legibilidade, hierarquia clara
+   ========================================================================= */
+
+@page {
+  size: A4;
+  margin: 22mm 18mm 22mm 18mm;
+
+  @top-right {
+    content: "Regulatório BCB · Fundamentos";
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    color: #6b7280;
+  }
+
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    color: #6b7280;
+  }
+
+  @bottom-left {
+    content: "Paulo Marcos Lucio";
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    color: #6b7280;
+  }
+}
+
+@page :first {
+  margin: 0;
+  @top-right { content: ""; }
+  @bottom-right { content: ""; }
+  @bottom-left { content: ""; }
+}
+
+@page toc {
+  @top-right { content: "Sumário"; }
+}
+
+/* ========== Reset / Base ========== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 11pt;
+}
+
+body {
+  font-family: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
+  line-height: 1.55;
+  color: #1f2937;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ========== Cover ========== */
+
+.cover {
+  page: cover;
+  page-break-after: always;
+  height: 297mm;
+  width: 210mm;
+  background: linear-gradient(135deg, #0d1117 0%, #1f2c4a 50%, #1f6feb 100%);
+  color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30mm 22mm;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(137, 87, 229, 0.3) 0%, transparent 70%);
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(31, 111, 235, 0.25) 0%, transparent 70%);
+}
+
+.cover-header {
+  font-family: 'Inter', sans-serif;
+  font-size: 11pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #58a6ff;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-main {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.cover-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 48pt;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 14pt 0;
+  color: #ffffff;
+}
+
+.cover-subtitle {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18pt;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #c9d1d9;
+  max-width: 540pt;
+  margin: 0;
+}
+
+.cover-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8pt;
+  margin-top: 24pt;
+}
+
+.cover-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  font-weight: 500;
+  background: rgba(88, 166, 255, 0.15);
+  border: 1px solid rgba(88, 166, 255, 0.4);
+  color: #58a6ff;
+  padding: 4pt 10pt;
+  border-radius: 99px;
+}
+
+.cover-footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 14pt;
+  font-family: 'Inter', sans-serif;
+}
+
+.cover-footer-author {
+  font-size: 14pt;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 3pt 0;
+}
+
+.cover-footer-meta {
+  font-size: 10pt;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cover-footer-meta a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+/* ========== TOC ========== */
+
+.toc {
+  page: toc;
+  page-break-after: always;
+}
+
+.toc h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 28pt;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  border-bottom: 3px solid #1f6feb;
+  padding-bottom: 6pt;
+  margin: 0 0 18pt 0;
+  color: #0d1117;
+}
+
+.toc-intro {
+  font-style: italic;
+  color: #4b5563;
+  margin-bottom: 18pt;
+  font-size: 10.5pt;
+}
+
+.toc ol {
+  list-style: none;
+  counter-reset: item;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-part {
+  font-family: 'Inter', sans-serif;
+  font-size: 13pt;
+  font-weight: 700;
+  color: #1f6feb;
+  margin: 16pt 0 6pt 0;
+  letter-spacing: 0.02em;
+}
+
+.toc-chapter {
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5pt;
+  font-weight: 400;
+  color: #1f2937;
+  padding: 3pt 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8pt;
+}
+
+.toc-chapter-num {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #6b7280;
+  min-width: 20pt;
+}
+
+.toc-chapter-title {
+  flex: 1;
+}
+
+/* ========== Section breaks (parts) ========== */
+
+h1 {
+  page-break-before: always;
+  font-family: 'Inter', sans-serif;
+  font-size: 26pt;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #0d1117;
+  border-bottom: 3px solid #1f6feb;
+  padding-bottom: 6pt;
+  margin-top: 0;
+  margin-bottom: 14pt;
+  line-height: 1.2;
+}
+
+h1:first-of-type {
+  /* Não força break extra na primeira H1 do body se já vier de page break */
+}
+
+/* ========== Headings ========== */
+
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18pt;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  color: #1f6feb;
+  margin: 22pt 0 8pt 0;
+  line-height: 1.25;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13pt;
+  font-weight: 700;
+  color: #0d1117;
+  margin: 16pt 0 6pt 0;
+  line-height: 1.3;
+  page-break-after: avoid;
+}
+
+h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 12pt 0 4pt 0;
+  page-break-after: avoid;
+}
+
+/* ========== Body text ========== */
+
+p {
+  margin: 0 0 9pt 0;
+  text-align: justify;
+  hyphens: auto;
+  orphans: 2;
+  widows: 2;
+}
+
+strong {
+  font-weight: 700;
+  color: #0d1117;
+}
+
+em {
+  font-style: italic;
+  color: #4b5563;
+}
+
+a {
+  color: #1f6feb;
+  text-decoration: none;
+  border-bottom: 1px dotted #1f6feb;
+}
+
+/* ========== Lists ========== */
+
+ul, ol {
+  margin: 6pt 0 9pt 0;
+  padding-left: 22pt;
+}
+
+li {
+  margin-bottom: 3pt;
+  text-align: justify;
+}
+
+li > p {
+  margin: 0 0 4pt 0;
+}
+
+/* ========== Code ========== */
+
+code {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 9.5pt;
+  background: #f3f4f6;
+  color: #d6336c;
+  padding: 1pt 4pt;
+  border-radius: 3px;
+  border: 1px solid #e5e7eb;
+}
+
+pre {
+  background: #0d1117;
+  color: #c9d1d9;
+  padding: 10pt 12pt;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 8.5pt;
+  line-height: 1.45;
+  overflow: hidden;
+  page-break-inside: avoid;
+  margin: 9pt 0;
+  border-left: 3px solid #1f6feb;
+}
+
+pre code {
+  background: transparent;
+  color: #c9d1d9;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* ========== Tables ========== */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10pt 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+thead tr {
+  background: #1f6feb;
+  color: white;
+}
+
+thead th {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-align: left;
+  padding: 6pt 8pt;
+  font-size: 9.5pt;
+  letter-spacing: 0.01em;
+}
+
+tbody td {
+  padding: 5pt 8pt;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+tbody tr:hover {
+  background: #fef3c7;
+}
+
+/* ========== Blockquotes (callouts) ========== */
+
+blockquote {
+  margin: 12pt 0;
+  padding: 10pt 14pt;
+  background: #eff6ff;
+  border-left: 4px solid #1f6feb;
+  border-radius: 0 4px 4px 0;
+  page-break-inside: avoid;
+  font-style: normal;
+  color: #1e3a8a;
+}
+
+blockquote p {
+  margin: 0;
+  text-align: left;
+}
+
+blockquote p + p {
+  margin-top: 6pt;
+}
+
+blockquote strong {
+  color: #1e3a8a;
+}
+
+/* Detect emoji-prefixed callouts by content via initial-letter trick */
+/* Use raw classes if needed via post-processing */
+
+blockquote:has(p:first-child:matches("⚠️")) {
+  background: #fef3c7;
+  border-left-color: #f59e0b;
+  color: #78350f;
+}
+
+/* ========== Horizontal rule ========== */
+
+hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 18pt 0;
+}
+
+/* ========== Misc ========== */
+
+.page-break {
+  page-break-after: always;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Avoid breaks inside */
+table, pre, blockquote {
+  break-inside: avoid;
+}
+
+/* Force break before H1 except first occurrence (handled above) */
+h1 {
+  page-break-before: always;
+}
+
+.no-break-before {
+  page-break-before: auto !important;
+}
+
+/* Print-specific tweaks */
+@media print {
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
