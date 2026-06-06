@@ -37,7 +37,7 @@ Use o [canal privado de Security Advisory do GitHub](https://github.com/Paulo-Ma
 Este material é **introdutório e educacional**. Os números específicos (TTLs, limites, multas, SLAs) **mudam entre versões** dos manuais oficiais. O material destaca esses pontos com callouts. **Sempre valide o número exato contra**:
 
 - **Manual do DICT (BCB)** — bcb.gov.br/estabilidadefinanceira/pix
-- **Manual de Operações OFB** — openbankingbrasil.org.br
+- **Manual de Operações OFB** — openfinancebrasil.org.br
 - **Padrões Open Insurance** — opinbrasil.com.br
 - **Resoluções BCB / Circulares Susep** vigentes
 

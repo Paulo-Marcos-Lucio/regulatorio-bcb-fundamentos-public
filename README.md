@@ -61,7 +61,7 @@ Cada parte tem ~30-50 páginas no PDF. Total ~250 páginas (descontando capa e T
 > manuais oficiais. Sempre valide número exato contra:
 >
 > - **Manual do DICT** (BCB) — versão atual em [bcb.gov.br/estabilidadefinanceira/pix](https://www.bcb.gov.br/estabilidadefinanceira/pix)
-> - **Manual de Operações OFB** — em [openbankingbrasil.org.br](https://openbankingbrasil.org.br)
+> - **Manual de Operações OFB** — em [openfinancebrasil.org.br](https://openfinancebrasil.org.br)
 > - **Padrões Open Insurance** — em [opinbrasil.com.br](https://opinbrasil.com.br)
 > - **Resoluções BCB / Circulares Susep** vigentes
 >
